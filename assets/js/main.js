@@ -85,7 +85,7 @@
     
     $('.counter').counterUp({
         delay: 10,
-        time: 1600,
+        time: 1000,
     });
     
     
