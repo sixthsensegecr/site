@@ -76,7 +76,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item active"><a class="page-scroll" href="#home">Home</a></li>
-                                    <li class="nav-item"><a class="page-scroll" href="#about">About</a></li>
+                                    <li class="nav-item"><a class="page-scroll" href="#about">About US</a></li>
                                     <li class="nav-item"><a class="page-scroll" href="#service">Services</a></li>
                                     <li class="nav-item"><a class="page-scroll" href="#work">Product</a></li>
                                     <!-- <li class="nav-item"><a class="page-scroll" href="#blog">Blog</a></li> -->
@@ -147,7 +147,7 @@
                         <div class="col-lg-12">
                             <div class="header-social-icon">
                                 <ul>
-                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100042253723646&ref=br_rs"><i class="lni-facebook-filled"></i></a></li>
                                     <li><a href="#"><i class="lni-twitter-original"></i></a></li>
                                     <li><a href="#"><i class="lni-behance-original"></i></a></li>
                                     <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
@@ -178,7 +178,7 @@
                 <div class="col-lg-6">
                     <div class="about-content mt-50">
                         <!-- <h5 class="about-title">Hi There! I'm Mark Parker</h5> -->
-                        <p style="text-align:justify"> <b>W</b>e offer a unique solution in the development of embedded systems.We are converting projects to product in major filed with the help of powerful technology,team and high quality products with reliable performance embedded systems .</p>
+                        <p style="text-align:justify"> <b>W</b>e offer a unique solution in the development of embedded systems.We are converting projects to product in major filed with the help of powerful technology,team and high quality products with reliable performance.</p>
                         <ul class="clearfix">
                             <!-- <li>
                                 <div class="single-info d-flex align-items-center">
@@ -309,7 +309,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title text-center pb-30">
-                        <h2 class="title">Products</h2>
+                        <h2 class="title">SERVICES</h2>
                         <!-- <p>Nunc id dui at sapien faucibus fermentum ut vel diam. Nullam tempus, nunc id efficitur sagittis, urna est ultricies eros, ac porta sem turpis quis leo.</p> -->
                     </div> <!-- section title -->
                 </div>
@@ -648,10 +648,12 @@
                         </div>
                         <div class="contact-content">
                             <h6 class="contact-title">Address</h6>
-                            <p> e-Welt, university Road,Rajkot-360006,Gujrat,India</p>
+                            <p>E-WELT</br>Nr. Kishanpara Circle, Gaurav Path, Rajkot 360001</p>
                         </div>
                     </div> <!-- contact box -->
                 </div>
+
+
                 <div class="col-lg-4 col-md-6 col-sm-7">
                     <div class="contact-box text-center mt-30">
                         <div class="contact-icon">
@@ -678,18 +680,22 @@
                     </div> <!-- contact box -->
                 </div>
             </div> <!-- row -->
+
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
             <div class="row">
-                <div class="col-lg-6">
+
+                       <div class="col-lg-6">
                     <div class="contact-form pt-30">
-                        <form id="contact-form" action="assets/contact.php">
+                        <form id="form" target="_self" onsubmit="return postToGoogle();" action="" >
                             <div class="single-form">
-                                <input type="text" name="name" placeholder="Name">
+                                <input type="text" id="name"  name="entry.85259489" placeholder="Name">
                             </div> <!-- single form -->
                             <div class="single-form">
-                                <input type="email" name="email" placeholder="Email">
+                                <input type="email" id ="email" name="entry.1028157684" placeholder="Email">
                             </div> <!-- single form -->
                             <div class="single-form">
-                                <textarea name="message" placeholder="Message"></textarea>
+                                <textarea id="msg" name="entry.1146773090" placeholder="Message"></textarea>
                             </div> <!-- single form -->
                             <p class="form-message"></p>
                             <div class="single-form">
@@ -698,6 +704,57 @@
                         </form>
                     </div> <!-- contact form -->
                 </div>
+                
+                <script>
+				function postToGoogle() {
+                var field1 = $("#name").val();
+                var field2 = $("#email").val();
+                var field3 = $("#msg").val();
+               
+                
+                if(field1 == ""){
+                    alert('Please Fill Your Name');
+                    document.getElementById("name").focus();
+                    return false;
+                }
+                if(field2 == ""){
+                    alert('Please Fill Your Email');
+                    document.getElementById("email").focus();
+                    return false;
+                }
+                if(field3 == ""){
+                    alert('Please Fill Your Message');
+                    document.getElementById("msg").focus();
+                    return false;
+                }
+                
+                
+
+
+                
+    
+                $.ajax({
+                    url: "https://docs.google.com/forms/d/e/1FAIpQLSfHkerxGrBsMtKhIeM8ph6iE40Vk2z3552-Y-_zuD_b2eGLQQ/formResponse?",
+                    data: {"entry.85259489": field1, "entry.1028157684": field2,"entry.1146773090":field3},
+                    type: "POST",
+                    dataType: "xml",
+                   success: function(d)
+                    {
+                    },
+                    error: function(x, y, z)
+                        {
+
+                            $("#name").val('');
+                            $("#email").val('');
+                            $("#msg").val('');
+                        }
+                });
+                return false;
+            }
+			</script>
+
+
+
                 <div class="col-lg-6">
                     <div class="contact-map mt-60">
                         <div class="gmap_canvas">
@@ -708,6 +765,8 @@
                     </div> <!-- contact map -->
                 </div>
             </div> <!-- row -->
+
+
         </div> <!-- container -->
     </section>
 
@@ -726,7 +785,7 @@
                             </a>
                             <p class="mt-">We are a unique solution provider as per customer requirement, and we are also dealing with product designing and product life cycle management</p>
                             <ul>
-                                <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100042253723646&ref=br_rs"><i class="lni-facebook-filled"></i></a></li>
                                 <li><a href="#"><i class="lni-twitter-original"></i></a></li>
                                 <li><a href="#"><i class="lni-pinterest"></i></a></li>
                                 <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
